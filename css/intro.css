@@ -1,0 +1,81 @@
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: transparent;
+  min-height: 100vh;
+  width: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Pretendard-Regular";
+}
+body .hero {
+  height: 100vh;
+  min-height: 800px;
+  padding: 120px 40px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+body .hero__content {
+  max-width: 1400px;
+}
+body .hero h1 {
+  margin-bottom: 64px;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  font-family: "Pretendard-Regular";
+}
+body .hero h1 {
+  font-size: 24px;
+}
+@media screen and (min-width: 500px) {
+  body .hero h1 {
+    font-size: calc(24px + 56 * (100vw - 500px) / 1420);
+  }
+}
+@media screen and (min-width: 1920px) {
+  body .hero h1 {
+    font-size: 80px;
+  }
+}
+body .hero .btn {
+  -webkit-transition: -webkit-transform 0.1s;
+  transition: -webkit-transform 0.1s;
+  transition: transform 0.1s;
+  transition: transform 0.1s, -webkit-transform 0.1s;
+  margin-top: 5px;
+  display: block;
+}
+body .hero .btn a {
+  background: black;
+  color: white;
+  border-radius: 100px;
+  padding: 16px 64px;
+  font-size: 18px;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+canvas {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}/*# sourceMappingURL=intro.css.map */
