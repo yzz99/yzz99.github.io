@@ -156,7 +156,7 @@ body {
   max-width: 100%;
 }
 .container .projectList .project-wrap {
-  padding: 100px 0;
+  padding: 100px 0 50px;
 }
 .container .projectList .project-wrap .project-cont {
   background: #f3eaf9;
@@ -306,11 +306,23 @@ body {
   }
   .container .projectList .card .left-item .info li {
     font-size: 15px;
+    margin-bottom: 6px;
   }
   .container .projectList .card .left-item .btn {
     font-size: 15px;
   }
   .container .projectList .card .right-item {
     max-height: 300px;
+  }
+  .container .projectList .project-wrap .project-cont {
+    font-size: 16px;
+    padding: 24px;
+  }
+  .container .projectList .project-wrap .info {
+    margin-top: 30px;
+  }
+  .container .projectList .project-wrap .info li {
+    font-size: 15px;
+    margin-bottom: 6px;
   }
 }/*# sourceMappingURL=ui.css.map */

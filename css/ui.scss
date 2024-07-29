@@ -157,7 +157,7 @@ body {
       transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
     .project-wrap {
-      padding: 100px 0;
+      padding: 100px 0 50px;
       .project-cont {
         background: #f3eaf9;
         border-radius: 32px;
@@ -313,6 +313,7 @@ body {
           .info {
             li {
               font-size: 15px;
+              margin-bottom: 6px;
             }
           }
           .btn {
@@ -321,6 +322,19 @@ body {
         }
         .right-item {
           max-height: 300px;
+        }
+      }
+      .project-wrap {
+        .project-cont {
+          font-size: 16px;
+          padding: 24px;
+        }
+        .info {
+          margin-top: 30px;
+          li {
+            font-size: 15px;
+            margin-bottom: 6px;
+          }
         }
       }
     }
