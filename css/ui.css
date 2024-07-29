@@ -288,7 +288,7 @@ body {
     text-align: center;
   }
   .container .projectList .project-wrap {
-    padding: 50px 0;
+    padding: 50px 0 30px;
   }
 }
 @media (max-width: 720px) {
