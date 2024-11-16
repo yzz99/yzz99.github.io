@@ -126,6 +126,14 @@ body {
         .color-a {
           background: linear-gradient(to top right, #8162ce, #f54ba5);
         }
+        .disabled {
+          background: #575757 !important;
+          &:hover {
+            background: #575757 !important;
+            border: none !important;
+            color: #fff !important;
+          }
+        }
       }
       .right-item {
         width: 70%;

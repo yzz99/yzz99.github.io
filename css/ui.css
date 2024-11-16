@@ -130,6 +130,14 @@ body {
   background: -webkit-gradient(linear, left bottom, right top, from(#8162ce), to(#f54ba5));
   background: linear-gradient(to top right, #8162ce, #f54ba5);
 }
+.container .projectList .card .left-item .disabled {
+  background: #575757 !important;
+}
+.container .projectList .card .left-item .disabled:hover {
+  background: #575757 !important;
+  border: none !important;
+  color: #fff !important;
+}
 .container .projectList .card .right-item {
   width: 70%;
   border-radius: 15px;
