@@ -1,0 +1,95 @@
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(
+          #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
+            ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+        );
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: transparent;
+  min-height: 100vh;
+  width: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Pretendard-Regular";
+  .hero {
+    height: 100vh;
+    min-height: 800px;
+    padding: 120px 40px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+
+    &__content {
+      max-width: 1400px;
+    }
+
+    h1 {
+      @include fluid-type(500px, 1920px, 24px, 80px);
+      margin-bottom: 64px;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      font-family: "Pretendard-Regular";
+    }
+    .btn {
+      transition: transform 0.1s;
+      margin-top: 5px;
+      display: block;
+      a {
+        background: black;
+        color: white;
+        border-radius: 100px;
+        padding: 16px 64px;
+        font-size: 18px;
+        cursor: pointer;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+canvas {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}

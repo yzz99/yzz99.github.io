@@ -1,0 +1,169 @@
+//자기소개, 경력기술서
+.introduction {
+  padding: 30px;
+  .myself {
+    .pc {
+      display: block;
+    }
+    .mobile {
+      display: none;
+    }
+    text-align: center;
+    font-size: 28px;
+    &__tit {
+      font-weight: 400;
+      letter-spacing: -1px;
+    }
+    &__pic {
+      width: 30%;
+      margin: 50px auto 20px;
+      img {
+        width: 100%;
+      }
+    }
+    &__name {
+      &--eng {
+        font-size: 20px;
+      }
+    }
+  }
+  .box {
+    margin: 50px 0;
+    &__tit {
+      font-size: 20px;
+      margin-bottom: 10px;
+      &--sub {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+    }
+    &__cont {
+      background: #fff;
+      padding: 25px;
+      box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.08);
+      border-radius: 10px;
+    }
+    &__txt {
+      font-size: 15px;
+    }
+    .skillList {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      cursor: pointer;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      li {
+        flex-shrink: 0;
+        width: 170px;
+      }
+    }
+  }
+  .listUp {
+    margin-top: 15px;
+  }
+}
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  &.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+//경력기술서
+.career__header {
+  border-bottom: 1px solid #000;
+}
+.section-scroll {
+  width: auto;
+  max-width: none;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  .table {
+    width: 100%;
+    thead {
+      td {
+        font-size: 14px;
+        background-color: #f8f8f8;
+        vertical-align: middle;
+        text-align: center;
+        font-weight: 400;
+        padding: 20px;
+        border-right: 1px solid #eee;
+      }
+    }
+    tbody {
+      td {
+        img {
+          width: 100px;
+        }
+        font-size: 14px;
+        vertical-align: middle;
+        text-align: center;
+        font-weight: 400;
+        padding: 20px;
+        border-right: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+        ul {
+          li {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .introduction {
+    padding: 5%;
+    .myself {
+      font-size: 22px;
+      .pc {
+        display: none;
+      }
+      .mobile {
+        display: block;
+      }
+      &__tit {
+      }
+      &__pic {
+        padding: 20px auto 10px !important;
+        img {
+        }
+      }
+      &__name {
+        font-size: 18px;
+
+        &--eng {
+          font-size: 16px;
+        }
+      }
+    }
+    .box {
+      margin: 30px 0;
+      &__tit {
+        font-size: 18px;
+        &--sub {
+          font-size: 16px;
+        }
+      }
+      &__cont {
+        font-size: 14px;
+      }
+      &__txt {
+        font-size: 14px;
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>차연주 포트폴리오</title>
+    <link href="css/intro.css" rel="stylesheet" type="text/css" />
+    <link href="css/cont.css" rel="stylesheet" type="text/css" />
+    <link href="css/BasicSet.css" rel="stylesheet" type="text/css" />
+</head>
+<body> 
+    <div class="wrap">
+        <h1>
+            <span>차연주의 포트폴리오</span>
+        </h1>
+
+        <div class="introduction">
+            <div class="myself">
+                <p class="myself__tit pc">멋진 생각과 디자인에 바른 코드를 더합니다.</p>
+                <p class="myself__tit mobile">멋진 생각과 디자인에<br/>바른 코드를 더합니다.</p>
+                <p class="myself__pic"><img src="img/yj.png" alt="차연주"></p>
+                <p class="myself__name">차연주</p>
+                <p class="myself__name--eng">CHA YEONJU</p>
+            </div>
+            <div class="box about">
+                <p class="box__tit fade-in-right">
+                    ABOUT ME
+                </p>
+                <div class="box__cont fade-in-right">
+                    <p class="box__tit--sub">"새로운 가치를 창출할 퍼블리셔"</p>
+                    <p class="txt">
+                        전문적인 지식으로 여러 직군과 협업 가능합니다.<br/>
+                        퍼블리셔로 쌓아온 실력을 바탕으로 프론트앤드개발의 관심을 결합하여, 웹 개발의 다양한 측면을 보다 넓은 시야에서 이해합니다. 지속적으로 기술적 경험을 쌓고, 새로운 기술 도전에 적극적으로 대응하여 더 나은 웹사이트 및 애플리케이션을 만들어 나가고 싶습니다.
+                        <ul class="listUp">
+                            <li>- 멀티미디어학 전공 (공학사)</li>
+                            <li>- 웹 표준 및 웹 접근성 마크업</li>
+                            <li>- Git 통한 형상 관리</li>
+                            <li>- Vue  프레임워크 개발 환경에서의 프로젝트 경험</li>
+                            <li>- HTML5, CSS3, Vue.js, SCSS, JavaScript, JQuery, Git</li>
+                            <li>- Zeplin, Figma를 통해 디자인 가이드를 준수하여 퍼블리싱 진행</li>
+                            <li>- Jira, Confluence, Redmine 협업툴 이용</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            <!-- <div class="box">
+                <p class="box__tit fade-in-right">
+                    SKILLS
+                </p>
+                    <ul class="skillList">
+                        <li><img src="img/html.gif"></li>
+                        <li><img src="img/css.gif"></li>
+                        <li><img src="img/scss.gif"></li>
+                        <li><img src="img/vuejs.gif"></li>
+                        <li><img src="img/js.gif"></li>
+                        <li><img src="img/jquery.gif"></li>
+                        <li><img src="img/ps.gif"></li>
+                        <li><img src="img/ts.gif"></li>
+                        <li><img src="img/gitlab.gif"></li>
+                        <li><img src="img/spring.gif"></li>
+                        <li><img src="img/figma.gif"></li>
+                        <li><img src="img/jira.gif"></li>
+                        <li><img src="img/conf.gif"></li>
+                        <li><img src="img/vscode.gif"></li>
+                    </ul>
+            </div> -->
+        </div>
+    </div>
+    
+  <script>
+    const elements = document.querySelectorAll('.fade-in-right');
+
+    const handleScroll = () => {
+      elements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.classList.add('active');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('load', handleScroll); // 페이지 로드 시에도 실행
+  </script>
+</body>
+</html>

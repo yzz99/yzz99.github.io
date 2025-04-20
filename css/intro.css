@@ -1,81 +1,136 @@
-@font-face {
-  font-family: "Pretendard-Regular";
-  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
+.wrap {
+  max-width: 720px;
+  position: relative;
+  margin: 0 auto;
+  background: #f0f6ff;
 }
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-body {
-  background-color: transparent;
-  min-height: 100vh;
-  width: 100%;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: "Pretendard-Regular";
-}
-body .hero {
-  height: 100vh;
-  min-height: 800px;
-  padding: 120px 40px;
-  display: grid;
-  place-items: center;
+.wrap h1 {
+  background: linear-gradient(-45deg, #af48b7 -5.22%, #5362e8 41.4%, #626fe6 56.38%, #af48b7 97.24%);
+  color: #fff;
+  padding: 30px;
+  border-radius: 0 0 20px 20px;
   text-align: center;
+  margin-bottom: 50px;
 }
-body .hero__content {
-  max-width: 1400px;
-}
-body .hero h1 {
-  margin-bottom: 64px;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  font-family: "Pretendard-Regular";
-}
-body .hero h1 {
+.wrap h1 span {
+  letter-spacing: -1px;
   font-size: 24px;
+  position: relative;
+  display: inline-block;
+  padding-left: 90px;
 }
-@media screen and (min-width: 500px) {
-  body .hero h1 {
-    font-size: calc(24px + 56 * (100vw - 500px) / 1420);
-  }
+.wrap h1 span::after {
+  position: absolute;
+  background: url(../img/top-icon.png);
+  content: "";
+  width: 89px;
+  height: 89px;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-repeat: no-repeat;
 }
-@media screen and (min-width: 1920px) {
-  body .hero h1 {
-    font-size: 80px;
-  }
+.wrap .chat {
+  padding: 0 30px;
 }
-body .hero .btn {
-  -webkit-transition: -webkit-transform 0.1s;
-  transition: -webkit-transform 0.1s;
-  transition: transform 0.1s;
-  transition: transform 0.1s, -webkit-transform 0.1s;
-  margin-top: 5px;
+.wrap .chat .bot-msg,
+.wrap .chat .user-msg {
+  max-width: 70%;
+  padding: 13px 20px;
+  border-radius: 15px;
+  margin: 10px 0;
+  display: inline-block;
+  -webkit-animation: fadeIn 0.5s ease;
+          animation: fadeIn 0.5s ease;
+}
+.wrap .chat .bot-msg {
+  background: #e0e0e0;
+}
+.wrap .chat .user-msg {
+  background: #394047;
+  color: #fff;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-left: auto;
   display: block;
+  text-align: right;
 }
-body .hero .btn a {
-  background: black;
-  color: white;
-  border-radius: 100px;
-  padding: 16px 64px;
-  font-size: 18px;
+.wrap .chat .btn-wrap {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+.wrap .chat .chat-btn {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
   cursor: pointer;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  padding: 20px;
+  font-size: 15px;
+  letter-spacing: -1px;
+}
+.wrap .chat .chat-btn:hover {
+  background: #cce5ff;
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+.wrap .bottom-chat {
+  background: #fff;
+  position: absolute;
+  bottom: 10px;
+  width: 97%;
+  height: 60px;
+  -webkit-box-shadow: 0px -4px 44px 0px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px -4px 44px 0px rgba(0, 0, 0, 0.05);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
-canvas {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  pointer-events: none;
+@media (max-width: 720px) {
+  .wrap h1 {
+    margin-bottom: 30px;
+  }
+  .wrap .chat {
+    padding: 0 15px;
+  }
+  .wrap .chat .bot-msg,
+  .wrap .chat .user-msg {
+    padding: 13px !important;
+    font-size: 14px;
+  }
+  .wrap .chat .chat-btn {
+    padding: 15px !important;
+  }
 }/*# sourceMappingURL=intro.css.map */

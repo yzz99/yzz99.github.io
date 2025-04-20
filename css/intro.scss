@@ -1,95 +1,124 @@
-@function strip-unit($value) {
-  @return $value / ($value * 0 + 1);
-}
-
-@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
-  $u1: unit($min-vw);
-  $u2: unit($max-vw);
-  $u3: unit($min-font-size);
-  $u4: unit($max-font-size);
-
-  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
-    & {
-      font-size: $min-font-size;
-      @media screen and (min-width: $min-vw) {
-        font-size: calc(
-          #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
-            ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
-        );
-      }
-      @media screen and (min-width: $max-vw) {
-        font-size: $max-font-size;
-      }
-    }
-  }
-}
-
-@font-face {
-  font-family: "Pretendard-Regular";
-  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
-    format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: transparent;
-  min-height: 100vh;
-  width: 100%;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: "Pretendard-Regular";
-  .hero {
-    height: 100vh;
-    min-height: 800px;
-    padding: 120px 40px;
-    display: grid;
-    place-items: center;
+.wrap {
+  max-width: 720px;
+  position: relative;
+  margin: 0 auto;
+  background: #f0f6ff;
+  h1 {
+    // background: #3e9ddd;
+    background: linear-gradient(
+      -45deg,
+      #af48b7 -5.22%,
+      #5362e8 41.4%,
+      #626fe6 56.38%,
+      #af48b7 97.24%
+    );
+    color: #fff;
+    padding: 30px;
+    border-radius: 0 0 20px 20px;
     text-align: center;
-
-    &__content {
-      max-width: 1400px;
-    }
-
-    h1 {
-      @include fluid-type(500px, 1920px, 24px, 80px);
-      margin-bottom: 64px;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      font-family: "Pretendard-Regular";
-    }
-    .btn {
-      transition: transform 0.1s;
-      margin-top: 5px;
-      display: block;
-      a {
-        background: black;
-        color: white;
-        border-radius: 100px;
-        padding: 16px 64px;
-        font-size: 18px;
-        cursor: pointer;
-        font-family: "Montserrat", sans-serif;
-        font-weight: 700;
+    margin-bottom: 50px;
+    span {
+      letter-spacing: -1px;
+      font-size: 24px;
+      position: relative;
+      display: inline-block;
+      padding-left: 90px;
+      &::after {
+        position: absolute;
+        background: url(../img/top-icon.png);
+        content: "";
+        width: 89px;
+        height: 89px;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background-repeat: no-repeat;
       }
     }
   }
+  .chat {
+    padding: 0 30px;
+    .bot-msg,
+    .user-msg {
+      max-width: 70%;
+      padding: 13px 20px;
+      border-radius: 15px;
+      margin: 10px 0;
+      display: inline-block;
+      animation: fadeIn 0.5s ease;
+    }
+    .bot-msg {
+      background: #e0e0e0;
+    }
+    .user-msg {
+      background: #394047;
+      color: #fff;
+      align-self: flex-end;
+      margin-left: auto;
+      display: block;
+      text-align: right;
+    }
+
+    .btn-wrap {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .chat-btn {
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.2s;
+      padding: 20px;
+      font-size: 15px;
+      letter-spacing: -1px;
+    }
+
+    .chat-btn:hover {
+      background: #cce5ff;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+  .bottom-chat {
+    background: #fff;
+    position: absolute;
+    bottom: 10px;
+    width: 97%;
+    height: 60px;
+    box-shadow: 0px -4px 44px 0px rgba(0, 0, 0, 0.05);
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
-canvas {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  pointer-events: none;
+@media (max-width: 720px) {
+  .wrap {
+    h1 {
+      margin-bottom: 30px;
+    }
+    .chat {
+      padding: 0 15px;
+      .bot-msg,
+      .user-msg {
+        padding: 13px !important;
+        font-size: 14px;
+      }
+      .chat-btn {
+        padding: 15px !important;
+      }
+    }
+  }
 }
