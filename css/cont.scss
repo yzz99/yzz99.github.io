@@ -117,13 +117,16 @@
 .section-scroll {
   width: auto;
   max-width: none;
-  display: flex;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow-y: auto;
+  max-height: 800px;
   .table {
     width: 100%;
     thead {
-      td {
+      th {
+        position: sticky;
+        top: 0;
+        background-color: #fff; /* 또는 테이블 배경색 */
+        z-index: 10; /* 겹침 방지 */
         font-size: 14px;
         background-color: #f8f8f8;
         vertical-align: middle;
@@ -201,5 +204,8 @@
         font-size: 14px;
       }
     }
+  }
+  .section-scroll {
+    max-height: 80vh;
   }
 }
