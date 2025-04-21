@@ -212,7 +212,7 @@
     }
   }
   .section-scroll {
-    max-height: auto; //mw에서는 제외
+    max-height: auto !important; //mw에서는 제외
     .table {
       thead {
         th {
