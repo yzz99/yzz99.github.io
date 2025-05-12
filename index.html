@@ -9,15 +9,15 @@
     <link href="css/BasicSet.css" rel="stylesheet" type="text/css" />
 </head>
 <body> 
-    <div class="wrap" style="height:100vh;">
+    <div class="wrap">
         <h1>
             <span>차연주의 포트폴리오</span>
         </h1>
-        <div class="chat" id="chatBox"></div>
+        <div class="cont-wrap" id="chatBox"></div>
 
         <!-- 👇 미리 정의된 대화들 (숨겨져 있음) -->
         <div id="messages" hidden>
-            <div class="bot-msg">안녕하세요! 차연주의 포트폴리오 봇 입니다. 🤖</div>
+            <div class="bot-msg">안녕하세요! 차연주의 포트폴리오 입니다. 🤖</div>
             <div class="user-msg">안녕! 차연주 퍼블리셔에 대해 궁금해</div>
             <div class="bot-msg">
                 차연주 퍼블리셔에 대해 정리해보았어요.<br/>
@@ -25,13 +25,16 @@
             </div>
             <div class="btn-wrap">
             <button class="chat-btn" onclick="location.href='introduction.html'">👩 자기소개</button>
-            <button class="chat-btn" onclick="location.href='career.html'" target="_blank">📃 경력기술서</button>
-            <button class="chat-btn" onclick="location.href='project.html'" target="_blank">💻 작업물</button>
+            <button class="chat-btn" onclick="window.open('career.html', '_blank')">📃 경력기술서</button>
+            <button class="chat-btn" onclick="window.open('project.html', '_blank')">💻 작업물</button>
             </div>
         </div>
-        <!-- <div class="bottom-chat">
-        하단 채팅창
-        </div> -->
+        <div class="bottom-chat">
+          <div class="inputwrap">
+            <input type="text" placeholder="무엇이든 물어보세요!" disabled/>
+            <span>전송아이콘</span>
+          </div>
+        </div>
     </div>
     </div>
 
